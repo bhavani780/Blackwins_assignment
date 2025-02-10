@@ -5,6 +5,7 @@ CREATE TABLE contacts (
   name VARCHAR(200),
   email VARCHAR(200),
   phoneno INTEGER,
+  address VARCHAR(200),
   time DATETIME
 )
   
