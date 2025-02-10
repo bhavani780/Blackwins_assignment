@@ -30,14 +30,14 @@ initializeDBAndServer();
 //Creating API endpoints
 
 //GET METHOD
-app.get("/books/", async (request, response) => {
-  const getBooksQuery = `
+app.get("/contacts/", async (request, response) => {
+  const getContactsQuery = `
     SELECT
       *
     FROM
-      book
+      contacts
     ORDER BY
-      book_id;`;
-  const booksArray = await db.all(getBooksQuery);
-  response.send(booksArray);
+      contact_id;`;
+  const contactsArray = await db.all(getContactsQuery);
+  response.send(contactsArray);
 });
