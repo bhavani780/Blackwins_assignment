@@ -1,10 +1,10 @@
 //Creating Table Contacts
 
 CREATE TABLE contacts (
-  Contact_id INTEGER,
-  Name VARCHAR(200),
-  Email VARCHAR(200),
-  Phoneno INTEGER,
-  Time DATETIME
+  contact_id INTEGER,
+  name VARCHAR(200),
+  email VARCHAR(200),
+  phoneno INTEGER,
+  time DATETIME
 )
   
