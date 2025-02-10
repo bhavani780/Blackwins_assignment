@@ -6,7 +6,7 @@ const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
 const app = express();
 
-const dbPath = path.join(__dirname, "goodreads.db");
+const dbPath = path.join(__dirname, "contacts.db");
 
 let db = null;
 
@@ -26,3 +26,18 @@ const initializeDBAndServer = async () => {
 };
 
 initializeDBAndServer();
+
+//Creating API endpoints
+
+//GET METHOD
+app.get("/books/", async (request, response) => {
+  const getBooksQuery = `
+    SELECT
+      *
+    FROM
+      book
+    ORDER BY
+      book_id;`;
+  const booksArray = await db.all(getBooksQuery);
+  response.send(booksArray);
+});
