@@ -68,3 +68,29 @@ app.post("/contacts/", async (request, response) => {
   const contactId = dbResponse.lastID;
   response.send({ contactId: contactId });
 });        
+
+//PUT METHOD 
+app.put("/contacts/:contactId/", async (request, response) => {
+  const { contactId } = request.params;
+  const contactDetails = request.body;
+  const {
+    contactId,
+    name,
+    email,
+    phoneno,
+    address,
+  } = contactDetails;
+  const updateContactQuery = `
+    UPDATE
+      contacts
+    SET
+      contact_id=${contactId},
+      name='${name}',
+      email='${email}',
+      phoneno=${phoneno},
+      address='${address}'
+    WHERE
+      contact_id = ${contactId};`;
+  await db.run(updateContactQuery);
+  response.send("Contact Updated Successfully");
+});
