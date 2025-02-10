@@ -1,5 +1,6 @@
+//Creating Table Contacts
 
-CREATE TABLE Contacts (
+CREATE TABLE contacts (
   ContactId INTEGER,
   Name VARCHAR(200),
   Email VARCHAR(200),
