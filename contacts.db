@@ -9,3 +9,5 @@ CREATE TABLE contacts (
   time DATETIME
 )
   
+INSERT INTO contacts (
+  VALUES(
