@@ -94,3 +94,29 @@ app.put("/contacts/:contactId/", async (request, response) => {
   await db.run(updateContactQuery);
   response.send("Contact Updated Successfully");
 });
+
+//DELETE METHOD 
+app.delete("/contacts/:contactId/", async (request, response) => {
+  const { contactId } = request.params;
+  const deleteContactQuery = `
+    DELETE FROM
+      contacts
+    WHERE
+      contact_id = ${contactId};`;
+  await db.run(deleteContactQuery);
+  response.send("Contact Deleted Successfully");
+});
+
+//GET METHOD 
+app.get("/contacts/:contactId/", async (request, response) => {
+  const { contactId } = request.params;
+  const getContactQuery = `
+    SELECT
+     *
+    FROM
+     book
+    WHERE
+      contact_id = ${contactId};`;
+  const contactsArray = await db.all(getContactQuery);
+  response.send(contactsArray);
+});
