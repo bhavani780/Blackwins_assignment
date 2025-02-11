@@ -9,5 +9,11 @@ CREATE TABLE contacts (
   time DATETIME
 )
   
-INSERT INTO contacts (
-  VALUES(
+INSERT INTO 
+    contacts (contact_id,name,email,phoneno,address,time)
+VALUES
+    (1,"Sathwik","sathwikb18@gmail.com",8798090786,"Karimnagar",12),
+    (2,"Bhavani","bhavanib99@gmail.com",9123456789,"Hyderabad",7),
+    (3,"Likitha","likithaG12@gmail.com",8123456780,"Gajwel",9),
+    (4,"Rakesh","rakeshn24@gmail.com",7654321890,"Doulthabad",11)
+
